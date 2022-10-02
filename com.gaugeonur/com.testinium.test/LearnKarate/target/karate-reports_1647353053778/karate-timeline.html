@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/examples\/users\/FirstTest\/Post[1:8]","start":1647352763745,"end":1647352765057,"title":"src\/test\/java\/examples\/users\/FirstTest\/Post[1:8] 16:59:23.745-16:59:25.057 Post Demo 2"},{"id":2,"group":1,"content":"src\/test\/java\/examples\/users\/FirstTest\/Post[2:16]","start":1647352765063,"end":1647352765375,"title":"src\/test\/java\/examples\/users\/FirstTest\/Post[2:16] 16:59:25.063-16:59:25.375 Post Demo 2"},{"id":3,"group":1,"content":"src\/test\/java\/examples\/users\/FirstTest\/Post[3:24]","start":1647352765378,"end":1647352765664,"title":"src\/test\/java\/examples\/users\/FirstTest\/Post[3:24] 16:59:25.378-16:59:25.664 Post Demo 3"},{"id":4,"group":1,"content":"src\/test\/java\/examples\/users\/FirstTest\/Post[4:33]","start":1647352765667,"end":1647352766037,"title":"src\/test\/java\/examples\/users\/FirstTest\/Post[4:33] 16:59:25.667-16:59:26.037 Post Demo 4"},{"id":5,"group":1,"content":"src\/test\/java\/examples\/users\/FirstTest\/Post[5:43]","start":1647352766038,"end":1647352766355,"title":"src\/test\/java\/examples\/users\/FirstTest\/Post[5:43] 16:59:26.038-16:59:26.355 Post Demo 5"},{"id":6,"group":1,"content":"src\/test\/java\/examples\/users\/FirstTest\/Post[6:61]","start":1647352766361,"end":1647352766726,"title":"src\/test\/java\/examples\/users\/FirstTest\/Post[6:61] 16:59:26.361-16:59:26.726 Post Demo 6","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
